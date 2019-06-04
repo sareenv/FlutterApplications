@@ -2,11 +2,16 @@
 
 import 'package:flutter/material.dart';
 
-void main(){
-
+void main() {
   runApp(MaterialApp(
-      home: Center(
-          child: Text("Hello World")
-      )
+    home: Scaffold(
+        appBar: AppBar(
+            title: Text("I am Super Rich"),
+            backgroundColor: Colors.blueGrey[900]),
+        backgroundColor: Colors.white,
+        body: Center(
+            child: Image(
+              image: AssetImage("images/sample.jpg")
+            ))),
   ));
 }
