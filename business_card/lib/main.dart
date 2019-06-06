@@ -10,20 +10,47 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
 
         body: SafeArea(
-          child: Container(
-            color: Colors.teal,
-            height: 100.0,
-            width: 380.0,
-            margin: EdgeInsets.symmetric(vertical: 140, horizontal: 100),
-            padding: EdgeInsets.fromLTRB(10, 40, 10, 20),
-              child: Text(
-                  "Hello, World Call from India 🇮🇳",
+          child: Column(
+//            mainAxisSize: MainAxisSize.max,
+//            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            verticalDirection: VerticalDirection.down,
+            children: <Widget>[
+              Container(
+                width: 100,
+                height: 100,
+                child: Text("c1",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                ),
+                color: Colors.red,
+                padding: EdgeInsets.fromLTRB(10, 40, 30, 10),
               ),
+
+              Container(
+                width: 100,
+                height: 100,
+                child: Text("c2",
+                  textAlign: TextAlign.center,
+                ),
+                color: Colors.teal,
+                padding: EdgeInsets.fromLTRB(10, 40, 30, 10),
+              ),
+
+              Container(
+                width: 100,
+                height: 100,
+                child: Text("c3",
+                  textAlign: TextAlign.center,
+                ),
+                color: Colors.amberAccent,
+                padding: EdgeInsets.fromLTRB(10, 40, 30, 10),
+              ),
+
+              Container(
+                width: double.infinity,
+              )
+
+            ],
           ),
         ),
       ),
