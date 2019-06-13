@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'question.dart';
+
+
 
 void main() => runApp(Quizzler());
 
@@ -27,6 +30,9 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
 
   List<Widget> scooreKeeper = [];
+  List<Question> questionAnswers = [Question('You can lead a cow down stairs but not up stairs', true), Question('Approximately one quarter of human bones are in the feet.', false), Question('A slug\'s blood is green', false)];
+
+  int i = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +46,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questionAnswers[i].question,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -65,8 +71,16 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true.
+
+                if(questionAnswers[i].answer == true){
+                  print("User got it correct");
+                }else{
+                  print("User got it wrong");
+                }
+
+
                 setState(() {
-                  scooreKeeper.add(Icon(Icons.check, color: Colors.green,));
+                  i = i++;
                 });
 
               },
@@ -87,6 +101,19 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+
+                if(questionAnswers[i].answer == false){
+                  print("User got it correct");
+                }else{
+                  print("User got it wrong");
+                }
+
+
+
+                setState(() {
+                  i = i++;
+                });
+
               },
             ),
           ),
