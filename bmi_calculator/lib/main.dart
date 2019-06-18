@@ -7,7 +7,7 @@ import 'ReusableCard.dart';
 const Color activeCardColor = Color(0xFF1D1E33);
 const Color inActiveColor = Color(0xFF111328);
 int height = 120;
-
+const int weight = 120;
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -159,6 +159,28 @@ class _BMIBodyState extends State<BMIBody> {
                   Expanded(
                     child: new ReusableCard(
                       color: Color(0xFF1D1E33),
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text("Weight", style: TextStyle( fontSize: 23)),
+                          Text(weight.toString(), style: TextStyle( fontSize: 40),),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              new RoundIconButton(),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              FloatingActionButton(child:
+                              Icon(Icons.add, color: Colors.white,),
+                                backgroundColor: Colors.blue.shade900,
+                              )
+                            ],
+                          ),
+
+
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(child: ReusableCard(color: Color(0xFF1D1E33))),
@@ -167,5 +189,19 @@ class _BMIBodyState extends State<BMIBody> {
             )
           ],
         ));
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(onPressed: (){},
+      fillColor: Colors.white,
+      shape: CircleBorder(),
+      constraints: BoxConstraints(
+        minHeight: 55,
+        minWidth: 55
+      ),
+    );
   }
 }
